@@ -153,3 +153,10 @@ osapi_compute_listen_port=<%= @osapi_compute_listen_port %>
 ec2_listen=<%= @ec2_listen %>
 ec2_listen_port=<%= @ec2_listen_port %>
 ec2_host=<%= @ec2_host %>
+
+
+##### CEILOMETER #####
+instance_usage_audit=<%= @use_ceilometer.to_s.capitalize() %>
+instance_usage_audit_period=hour
+notification_driver=nova.openstack.common.notifier.rpc_notifier
+notification_driver=ceilometer.compute.nova_notifier
